@@ -17,5 +17,5 @@ build-backend = "pdm.backend"
 distribution = true
 
 [tool.pdm.build]
-includes = ["src/sparv_pipeline_testing/"]
-source-includes = ["src/sparv_pipeline_testing/", "tests/"]
+includes = ["src/sparv_testing/"]
+source-includes = ["src/sparv_testing/", "tests/"]

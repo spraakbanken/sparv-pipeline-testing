@@ -16,8 +16,5 @@ build-backend = "pdm.backend"
 [tool.pdm]
 distribution = true
 
-[tool.pdm.build]
-package-dir = "src"
-
 [tool.pdm.dev-dependencies]
 dev = ["ruff>=0.4.6", "mypy>=1.10.0"]

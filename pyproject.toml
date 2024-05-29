@@ -1,0 +1,21 @@
+[project]
+name = "sparv-pipeline-testing"
+version = "0.1.0"
+description = "Testing utilities for sparv-pipeline."
+authors = [{ name = "Språkbanken Text", email = "sb-info@svenska.gu.se" }]
+dependencies = []
+requires-python = ">=3.8.1"
+readme = "README.md"
+license = { text = "MIT" }
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.build]
+includes = ["src/sparv_pipeline_testing/"]
+source-includes = ["src/sparv_pipeline_testing/", "tests/"]

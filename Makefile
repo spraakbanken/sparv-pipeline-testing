@@ -58,7 +58,7 @@ help:
 
 PLATFORM := `uname -o`
 REPO := sparv-pipeline-testing
-PROJECT_SRC := src/sparv_testing
+PROJECT_SRC := src/sparv_pipeline_testing
 
 ifeq (${VIRTUAL_ENV},)
   VENV_NAME = .venv

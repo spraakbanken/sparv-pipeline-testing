@@ -107,30 +107,4 @@ jobs:
           jobs: ${{ toJSON(needs) }}
           # allowed-failures: coverage
 
-  publish:
-    # This action publishes the built and tested artifact to PyPI, but only on a tag 
 
-    needs: 
-      - test-build
-    if: success() && startsWith(github.ref, 'refs/tags/v')
-    runs-on: ubuntu-latest
-    environment: release
-    permissions:
-      # IMPORTANT: this permission is mandatory for trusted publishing
-      id-token: write
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Set up Python ${{ env.MINIMUM_PYTHON_VERSION }}
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ env.MINIMUM_PYTHON_VERSION }}
-      - name: get dist artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: pypi_files
-          path: dist
-
-      - name: Publish package to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1

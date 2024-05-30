@@ -1,6 +1,6 @@
 [project]
 name = "sparv-pipeline-testing"
-version = "0.1.4"
+version = "0.1.5"
 description = "Testing utilities for sparv-pipeline."
 authors = [{ name = "Språkbanken Text", email = "sb-info@svenska.gu.se" }]
 dependencies = ["sparv-pipeline >=5.2.0"]

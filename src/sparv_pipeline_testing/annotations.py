@@ -47,4 +47,6 @@ class MockAnnotation(Annotation):
 
     def create_empty_attribute(self) -> List:
         """Create an empty attribute with the size of this annotation."""
+        if self._values:
+            return [None] * len(self._values)
         return [None] * max(len(val) for val in self._children.values())

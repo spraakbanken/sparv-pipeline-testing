@@ -22,3 +22,12 @@ def test_create_empty_attributes() -> None:
     )
 
     assert len(word.create_empty_attribute()) == 12
+
+
+def test_read_spans() -> None:
+    token = MockAnnotation(
+        name="<token>",
+        spans=[(0, 1)],
+    )
+
+    assert len(list(token.read_spans())) == 1

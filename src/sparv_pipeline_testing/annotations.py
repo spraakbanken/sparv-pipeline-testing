@@ -15,16 +15,28 @@ class MockAnnotation(Annotation):
         source_file: Optional[str] = None,  # noqa: ARG002
         values: Optional[List[str]] = None,
         children: Optional[Dict[str, List[List[int]]]] = None,
+        spans: Optional[List[Tuple[int, int]]] = None,
     ) -> None:
         super().__init__(name)
         self._values = values or []
         self._children = children or {}
+        self._spans = spans or []
 
     def read(self, allow_newlines: bool = False) -> Generator[str, None, None]:  # noqa: ARG002
         """Yield each line from the annotation."""
         if not self._values:
             return
         yield from self._values
+
+    def read_spans(
+        self,
+        decimals=False,  # noqa: ARG002
+        with_annotation_name=False,  # noqa: ARG002
+    ) -> Generator[Tuple[int, int], None, None]:
+        """Yield the spans of the annotation."""
+        if not self._spans:
+            return
+        yield from self._spans
 
     def get_children(
         self,

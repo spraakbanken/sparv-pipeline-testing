@@ -1,6 +1,6 @@
 """Mock outputs."""
 
-from typing import Generic, List, Optional, TypeVar
+from typing import Generic, Optional, TypeVar
 
 from sparv.api.classes import Output  # type: ignore [import-untyped]
 from sparv.core import log_handler  # type: ignore [import-untyped] # noqa: F401
@@ -13,11 +13,11 @@ class MemoryOutput(Output, Generic[T]):
 
     def __init__(self) -> None:
         """Create MemoryOutput."""
-        self.values: List[T] = []
+        self.values: list[T] = []
 
     def write(
         self,
-        values: List[T],
+        values: list[T],
         *,
         append: bool = False,
         allow_newlines: bool = False,  # noqa: ARG002
